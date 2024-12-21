@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>algo.fun</groupId>
-    <artifactId>algofun_week1</artifactId>
+    <artifactId>algofun_prep</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>algofun_week1</name>
-    <description>algofun_week1</description>
+    <name>algofun_prep</name>
+    <description>algofun_prep</description>
     <url/>
     <licenses>
         <license/>
