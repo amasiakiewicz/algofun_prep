@@ -41,14 +41,13 @@ class Result {
             final Integer cityA = link.get(0);
             final Integer cityB = link.get(1);
 
-            final Set<Integer> citiesA = cityToCitiesMap.getOrDefault(cityA, new HashSet<>());
-            
+            final Set<Integer> citiesA = cityToCitiesMap.computeIfAbsent(cityA, c -> new HashSet<>());
+
             if (citiesA.contains(cityB)) {
                 continue;
             }
 
             citiesA.add(cityA);
-            cityToCitiesMap.putIfAbsent(cityA, citiesA);
 
             final Set<Integer> citiesB = cityToCitiesMap.getOrDefault(cityB, new HashSet<>());
             citiesB.add(cityB);
