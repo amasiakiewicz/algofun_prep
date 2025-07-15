@@ -1,4 +1,4 @@
-package algo.fun.algofun_prep.threemonth.week1.breakingrecord;
+package algo.fun.algofun_prep.threemonth.week13.journeymoon;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -12,9 +12,9 @@ class ResultTest {
 
     @ParameterizedTest
     @MethodSource("provideParamsForResult")
-    void shouldResult(final List<Integer> scores, final List<Integer> expectedResult) {
+    void shouldResult(int n, List<List<Integer>> astronaut, final long expectedResult) {
         //when
-        final List<Integer> result = Result.breakingRecords(scores);
+        final long result = Result.journeyToMoon(n, astronaut);
 
         //then
         assertThat(result).isEqualTo(expectedResult);
@@ -23,7 +23,10 @@ class ResultTest {
     private static Stream<Arguments> provideParamsForResult() {
         return Stream.of(
                 Arguments.of(
-                        List.of(12, 24, 10, 24), List.of(1, 1)
+                        4, List.of(
+                                List.of(1, 2),
+                                List.of(2, 3)
+                        ), 3L
                 )
         );
     }
