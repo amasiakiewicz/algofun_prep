@@ -1,20 +1,19 @@
-package algo.fun.algofun_prep.bonus.cashMachine;
+package algo.fun.algofun_prep.threemonth.week13.shortpalindrome;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.List;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-class SolutionTest {
+class ResultTest {
 
     @ParameterizedTest
     @MethodSource("provideParamsForResult")
-    void shouldResult(int amountToPay, int amountGiven, final List<Integer> expectedResult) {
+    void shouldResult(String s, final int expectedResult) {
         //when
-        final List<Integer> result = Solution.cashMachine(amountToPay, amountGiven);
+        final int result = Result.shortPalindrome(s);
 
         //then
         assertThat(result).isEqualTo(expectedResult);
@@ -23,7 +22,9 @@ class SolutionTest {
     private static Stream<Arguments> provideParamsForResult() {
         return Stream.of(
                 Arguments.of(
-                        154, 200, List.of(20, 20, 5, 1)
+                        "kkkkkkz", 15
+                ), Arguments.of(
+                        "ghhggh", 4
                 )
         );
     }
