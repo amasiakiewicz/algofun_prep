@@ -1,4 +1,4 @@
-package algo.fun.algofun_prep.bonus;
+package algo.fun.algofun_prep.bonus.chessknight;
 
 import static java.util.stream.Collectors.toSet;
 
@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
 
-public class Solution {
+class Solution {
 
     private static class ColRow {
         int column;

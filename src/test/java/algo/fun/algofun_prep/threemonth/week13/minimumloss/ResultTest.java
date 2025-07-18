@@ -1,4 +1,4 @@
-package algo.fun.algofun_prep.bonus;
+package algo.fun.algofun_prep.threemonth.week13.minimumloss;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -8,15 +8,13 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-class SolutionTest {
+class ResultTest {
 
     @ParameterizedTest
     @MethodSource("provideParamsForResult")
-    void shouldResult(
-            final String start, final String end, final List<String> expectedResult
-    ) {
+    void shouldResult(List<Long> price, final long expectedResult) {
         //when
-        final List<String> result = Solution.getShortestChessKnightPath(start, end);
+        final long result = Result.minimumLoss(price);
 
         //then
         assertThat(result).isEqualTo(expectedResult);
@@ -25,9 +23,9 @@ class SolutionTest {
     private static Stream<Arguments> provideParamsForResult() {
         return Stream.of(
                 Arguments.of(
-                        "B1", "E3", List.of("B1", "C3", "D5", "E3")
+                        List.of(20L, 15L, 8L, 2L, 12L), 3L
                 )
         );
     }
-    
+
 }
